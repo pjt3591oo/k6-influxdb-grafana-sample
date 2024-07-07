@@ -25,7 +25,7 @@ $ k6 run --out influxdb=http://localhost:8086/k6_loadtest app.js
 
 * grafana setup
 
-`http://localhost:3000` 접속 후 user/password는 `admin/admin`
+`http://localhost:3000` 접속 후 로그인, user/password는 `admin/admin`
 
 1. datasource 추가
 
