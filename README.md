@@ -7,7 +7,7 @@ $ cd simple-server
 
 $ npm i
 
-# use port: 3001
+# use port: 8080
 $ npm run 
 ```
 
@@ -20,7 +20,7 @@ $ docker-compose up
 * run loadtest
 
 ```bash
-$ k6 run --out influxdb=http://localhost:8086/k6_loadtest app.js
+$ k6 run --out influxdb=http://localhost:8086/k6_loadtest app-test.js
 ```
 
 * grafana setup
@@ -31,7 +31,9 @@ $ k6 run --out influxdb=http://localhost:8086/k6_loadtest app.js
 
 [connections] - [Data sources] - [add new data source] - [input influxdb]
 
-url: http://localhost:8086, database: k6_loadtest 입력 후 Save & test 클릭
+url: http://influxdb:8086, database: k6_loadtest 입력 후 Save & test 클릭
+
+(grafana컨테이너 influxDB에서 컨테이너로 통신하기 때문에 localhost가 아닌 컨테이너 이름을 넣어준다.)
 
 2. 대시보드 생성
 
